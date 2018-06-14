@@ -225,7 +225,9 @@ a.btn,.btn:focus {
      -moz-border-radius: 0;
           border-radius: 0;
 }
-
+.btn-lg.round {
+	border-radius: 24px;
+}
 .btn-sm {
   -webkit-border-radius: 0;
      -moz-border-radius: 0;
