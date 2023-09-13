@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Mendeteksi iOS dan Android</title>
+    <title>Mendeteksi iOS dan Android dan Mengalihkan</title>
     <script>
-detectDevice()
-        // Fungsi untuk mendeteksi perangkat iOS atau Android
-        function detectDevice() {
+        // Fungsi untuk mendeteksi perangkat dan mengalihkan ke URL yang sesuai
+        function redirectByDevice() {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
             if (/android/i.test(userAgent)) {
-                alert('Anda mengakses situs ini dari perangkat Android.');
+                // Alihkan ke URL untuk perangkat Android
+                window.location.href = 'https://play.google.com/store/search?q=lingomouse&c=apps';
             } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                alert('Anda mengakses situs ini dari perangkat iOS (iPhone, iPad, atau iPod).');
+                // Alihkan ke URL untuk perangkat iOS
+                window.location.href = 'https://apps.apple.com/id/app/lingomouse/id1643064117';
             } else {
-                alert('Anda mengakses situs ini dari perangkat lain.');
+                // Alihkan ke URL default jika tidak terdeteksi iOS atau Android
+                // window.location.href = 'https://example.com/default-page';
             }
         }
     </script>
 </head>
 <body>
-    <h1>Selamat datang di situs kami!</h1>
-    <button onclick="detectDevice()">Deteksi Perangkat</button>
+<!--     <h1>Selamat datang di situs kami!</h1>
+    <button onclick="redirectByDevice()">Mengalihkan Perangkat</button> -->
 </body>
 </html>
