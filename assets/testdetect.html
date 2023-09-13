@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mendeteksi iOS dan Android</title>
+    <script>
+detectDevice()
+        // Fungsi untuk mendeteksi perangkat iOS atau Android
+        function detectDevice() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            if (/android/i.test(userAgent)) {
+                alert('Anda mengakses situs ini dari perangkat Android.');
+            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                alert('Anda mengakses situs ini dari perangkat iOS (iPhone, iPad, atau iPod).');
+            } else {
+                alert('Anda mengakses situs ini dari perangkat lain.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Selamat datang di situs kami!</h1>
+    <button onclick="detectDevice()">Deteksi Perangkat</button>
+</body>
+</html>
